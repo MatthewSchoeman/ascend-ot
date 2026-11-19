@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ascend Occupational Therapy · Kayla Van Eeden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#452a3f; --plum-2:#3a2235; --heading:#4a2c43; --mauve:#6a4c68; --mauve-2:#6e4a70;
+  --btn:#7c5179; --accent:#8a5f86; --text:#7b7079; --text-2:#5f5560;
+  --bg:#fcf9fc; --lav:#ece6ed; --card:#fbf8fb; --line:#ece3eb; --tag:#f2e9f1;
+  --s-in:#ebe5eb; --s-vi:#d3dbe0; --s-ho:#d1dad6;
+  --serif:"Playfair Display",Georgia,serif; --sans:"Raleway",system-ui,sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--heading);font-weight:400;line-height:1.15}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.center{text-align:center}
+.lead{font-size:16px;color:var(--text)}
+.section-head{max-width:640px;margin:0 auto 56px;text-align:center}
+.section-head h2{font-size:clamp(32px,4.2vw,50px);margin:14px 0 16px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-weight:600;font-size:13px;padding:11px 24px;transition:.2s;white-space:nowrap}
+.btn-primary{background:var(--btn);color:#fff}
+.btn-primary:hover{background:var(--plum)}
+.btn-outline{border:1px solid #ddd2dc;color:var(--heading);background:#fff}
+.btn-outline:hover{border-color:var(--btn)}
+.btn-ghost{border:1px solid rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-white{background:#fff;color:var(--plum)}
+.btn-white:hover{background:#f3ecf2}
+svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 4px 18px rgba(74,44,67,.10)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav-logo img{height:54px;width:auto}
+.nav-links{display:flex;gap:34px;align-items:center;font-size:14px;color:var(--text-2);font-weight:500}
+.nav-links a,.nav-links button{color:inherit;padding:6px 0;transition:color .2s}
+.nav-links a:hover,.nav-links button:hover,.nav-links .active{color:var(--btn)}
+.nav-links .active{font-weight:700}
+.dd{position:relative}
+.dd>button{display:flex;align-items:center;gap:6px}
+.dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);background:#fff;border-radius:14px;box-shadow:0 18px 40px rgba(74,44,67,.16);padding:10px;min-width:300px;opacity:0;visibility:hidden;transition:.2s}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu,.dd.open .dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dd-menu a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;font-size:14px;color:var(--heading)}
+.dd-menu a:hover{background:var(--tag)}
+.dd-menu img{width:32px;height:32px;border-radius:50%}
+.nav-cta{background:var(--mauve);color:#fff;border-radius:999px;padding:9px 22px;font-size:13px;font-weight:600}
+.nav-cta:hover{background:var(--plum)}
+.burger{display:none;width:42px;height:42px;border-radius:50%;color:var(--heading);font-size:22px;align-items:center;justify-content:center}
+
+/* HERO (home) */
+.hero{position:relative;min-height:min(86vh,780px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
+  background:
+   radial-gradient(ellipse 75% 70% at 50% 45%,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 60%),
+   radial-gradient(ellipse 120% 95% at 50% 40%,rgba(0,0,0,0) 62%,rgba(128,86,128,.32) 100%),
+   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .55 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+   #f2eff2}
+.hero-inner{padding:80px 20px;animation:rise 1s ease both}
+.hero-logo{width:clamp(180px,22vw,272px);margin:0 auto 6px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(50px,7.4vw,84px);letter-spacing:.06em;color:var(--plum);line-height:1}
+.hero .rule{width:min(560px,80vw);height:1px;background:#c9bcc6;margin:14px auto 16px}
+.hero .name{font-size:clamp(24px,2.8vw,34px);color:#8a7a88;font-weight:500}
+.hero .tagline{font-size:clamp(15px,1.8vw,22px);letter-spacing:.14em;color:#8a7a88;text-transform:uppercase;margin-top:4px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* WHAT IS OT */
+.what{padding:110px 0 70px}
+.what-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
+.what h2{font-size:clamp(34px,3.8vw,46px);margin-bottom:56px}
+.what p{font-size:16px;margin-bottom:18px;max-width:440px}
+.what p.small{font-size:14px}
+.img-arch{border-radius:18px 110px 18px 18px;overflow:hidden;aspect-ratio:419/287}
+.img-arch img{width:100%;height:100%;object-fit:cover}
+.hr{height:1px;background:#e2d9e1;margin:36px 0 64px}
+.journey-intro{display:grid;grid-template-columns:120px 1fr;gap:64px;align-items:start}
+.journey-intro img{width:110px;margin-top:4px}
+.journey-intro h3{font-size:clamp(34px,3.8vw,46px);margin-bottom:10px}
+.journey-intro h3 em{color:#a08099;font-style:italic}
+.journey-intro p{font-size:16px;max-width:720px}
+.journey-intro strong{display:block;margin-top:22px;color:var(--text-2);font-weight:700;font-size:15px}
+.pillars{margin-top:34px;background:#f5f0f5;border-radius:26px;padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pillar{background:#fff;border-radius:16px;padding:22px 20px 26px;box-shadow:0 4px 18px rgba(74,44,67,.05)}
+.pillar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.num{width:30px;height:30px;border-radius:50%;background:var(--tag);color:var(--accent);font-family:var(--serif);font-size:12px;display:grid;place-items:center}
+.pillar-top svg{color:var(--accent);font-size:16px}
+.pillar h4{font-size:19px;font-weight:500;margin-bottom:8px}
+.pillar p{font-size:13px;line-height:1.55}
+
+/* GALLERY marquee */
+.gallery{padding:90px 0 110px;overflow:hidden}
+.track{display:flex;gap:24px;width:max-content;animation:marq 60s linear infinite;align-items:center}
+.gallery:hover .track{animation-play-state:paused}
+.track figure{flex:none;overflow:hidden;border-radius:16px;height:316px}
+.track figure img{height:100%;width:auto;object-fit:cover}
+.track figure.tall{height:356px;border-radius:16px 70px 16px 16px}
+.track figure.arch{border-radius:70px 16px 16px 16px}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+/* KAYLA */
+.kayla{position:relative;background:#6c466f;padding:105px 0 104px;overflow:hidden}
+.kayla .waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:60%;pointer-events:none}
+.kayla-card{position:relative;max-width:907px;margin:0 auto;background:#fff;border-radius:22px;padding:58px 58px 54px 276px;box-shadow:0 20px 50px rgba(30,10,30,.18);z-index:1}
+.kayla-photo{position:absolute;left:-174px;bottom:-104px;width:422px;z-index:2}
+.kayla-card h3{font-size:40px;font-weight:500}
+.kayla-mobile{display:none}
+.kayla-card .sub{color:var(--btn);font-weight:600;font-size:16px;margin:6px 0 20px}
+.creds{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:9px 0;font-size:12px;color:var(--text);display:flex;flex-wrap:wrap;gap:6px 10px}
+.creds span+span:before{content:"•";margin-right:10px;color:#b9aab6}
+.kayla-card p{font-size:14px;margin:26px 0 28px}
+
+/* SERVICES home */
+.services{padding:96px 0 90px;background:#fff}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px 34px 26px;display:flex;flex-direction:column;transition:.25s;box-shadow:0 6px 22px rgba(74,44,67,.04)}
+.svc:hover,.svc.reveal.in:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(74,44,67,.10)}
+.svc-icon{width:46px;height:46px;border-radius:50%;margin-bottom:16px}
+.svc h3{font-size:clamp(22px,2.2vw,27px);margin-bottom:10px}
+.svc p{font-size:14px;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--tag);color:var(--accent);font-size:11px;font-weight:600;padding:4px 11px;border-radius:999px}
+.svc-link{margin-top:auto;padding-top:20px;border-top:1px solid #e5dce4;margin-top:26px;font-size:13px;font-weight:600;color:var(--btn);display:flex;align-items:center;gap:6px}
+.svc-link svg{transition:transform .2s}
+.svc:hover .svc-link svg{transform:translateX(4px)}
+.cta-dark{background:var(--plum);border-radius:16px;padding:40px 42px;margin-top:56px;display:flex;align-items:center;justify-content:space-between;gap:28px;color:#e9dde6}
+.cta-dark h3{color:#fff;font-size:clamp(24px,2.6vw,32px);margin-bottom:6px}
+.cta-dark p{font-size:14px;max-width:580px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* JOURNEY (how we work) */
+.journey{background:#664e66;padding:110px 0 100px;color:#eadfe8}
+.journey .eyebrow{color:#cbb9c8}
+.journey h2{color:#fff}
+.journey .lead{color:#eadfe8}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:30px}
+.steps:before{content:"";position:absolute;left:5%;right:5%;top:0;border-top:2px dotted rgba(255,255,255,.35)}
+.step{position:relative;background:#fff;border-radius:14px;padding:66px 22px 40px;text-align:center;margin-top:36px;min-height:240px;transition:.25s}
+.step:hover{transform:translateY(-4px)}
+.step-ic{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;background:#fff;color:var(--accent);display:grid;place-items:center;font-size:22px;box-shadow:0 6px 18px rgba(30,10,30,.18)}
+.step:first-child .step-ic{background:var(--plum);color:#fff}
+.step-n{position:absolute;top:-44px;left:calc(50% - 22px);background:#fff;color:var(--plum);font-size:9px;font-weight:700;border-radius:6px;padding:1px 6px;z-index:2}
+.step h4{font-size:22px;font-weight:500;margin-bottom:12px}
+.step p{font-size:13px;line-height:1.6;color:var(--text)}
+.cta-soft{margin-top:70px;background:rgba(255,255,255,.14);border-radius:14px;padding:30px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.cta-soft h3{font-size:clamp(22px,2.4vw,30px);color:var(--plum-2)}
+.cta-soft p{font-size:13px;color:#fff}
+
+/* SESSION TYPES */
+.sessions{position:relative;padding:110px 0 120px;overflow:hidden;background:var(--bg)}
+.leaf-deco{position:absolute;pointer-events:none;color:#ebe1ea}
+.sess-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+.sess-grid.two{grid-template-columns:1fr 1fr;gap:28px}
+.sess{border-radius:22px;padding:34px 30px 32px;position:relative;z-index:1;transition:.25s}
+.sess:hover{transform:translateY(-4px)}
+.sess.in{background:var(--s-in);border-radius:80px 22px 22px 22px}
+.sess.vi{background:var(--s-vi);border-radius:110px 110px 22px 22px;margin-top:34px}
+.sess.ho{background:var(--s-ho);border-radius:22px 110px 22px 22px;margin-top:68px}
+.sess-grid.two .ho{margin-top:34px;border-radius:22px 140px 22px 22px}
+.sess-grid.two .vi{margin-top:0;border-radius:22px 140px 22px 22px}
+.sess-ic{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--plum);display:grid;place-items:center;font-size:16px;margin-bottom:12px}
+.sess h3{font-size:26px;font-weight:500;color:var(--plum-2);margin-bottom:12px}
+.sess p{font-size:14px;line-height:1.6;max-width:300px}
+.sess hr{border:0;border-top:1px solid rgba(74,44,67,.13);margin:24px 0 10px}
+.sess .ph{border-radius:6px;overflow:hidden}
+.sess .ph img{width:100%;height:100%;object-fit:cover}
+
+/* CONTACT */
+.contact{position:relative;background:#6a5068;color:#efe5ed;padding:120px 0 220px;overflow:hidden}
+.contact h2{color:#fff;font-size:clamp(34px,4.2vw,50px);text-align:center}
+.contact .sub{text-align:center;font-size:17px;margin-top:6px}
+.contact-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;margin-top:84px;align-items:start;max-width:960px;margin-left:auto;margin-right:auto}
+.form{background:rgba(255,255,255,.18);border-radius:18px;padding:22px 18px 22px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-bottom:34px}
+.form input,.form textarea{width:100%;background:transparent;border:1px solid rgba(255,255,255,.75);border-radius:8px;padding:10px 14px;color:#fff;font:inherit;font-size:14px;letter-spacing:.03em}
+.form textarea{height:220px;resize:vertical}
+.form ::placeholder{color:rgba(255,255,255,.65)}
+.form input:focus,.form textarea:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.06)}
+.form .send{display:block;margin:30px auto 4px;background:#fff;color:var(--plum);border-radius:999px;padding:8px 22px;font-size:15px;letter-spacing:.04em}
+.form-note{margin-top:14px;font-size:13px;text-align:center;display:none}
+.form-note.show{display:block}
+.form-note a{text-decoration:underline;font-weight:600}
+.growth{width:min(330px,100%);margin-bottom:40px}
+.info{list-style:none;display:grid;gap:22px;font-size:16px;letter-spacing:.05em}
+.info li{display:flex;gap:12px;align-items:flex-start}
+.info svg{margin-top:5px;font-size:15px}
+.info a:hover{text-decoration:underline}
+.contact .waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:200px}
+.foot-meta{position:absolute;bottom:24px;left:0;right:0;text-align:center;font-size:12px;color:rgba(255,255,255,.55);z-index:2}
+
+/* SERVICE PAGE */
+.s-hero{padding:120px 0 130px}
+.s-hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+.s-hero h1{font-size:clamp(40px,5vw,62px);margin:16px 0 20px;font-weight:400}
+.s-hero p{font-size:17px;max-width:440px;margin-bottom:28px}
+.s-hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.s-hero .ph{overflow:hidden;aspect-ratio:516/308;box-shadow:0 18px 40px rgba(74,44,67,.10)}
+.s-hero .ph img{width:100%;height:100%;object-fit:cover}
+.r-tl{border-radius:80px 30px 30px 30px}.r-all{border-radius:34px}.r-bl{border-radius:30px 30px 30px 90px}.r-tr{border-radius:30px 90px 30px 30px}
+.role{position:relative;background:var(--lav);padding:90px 0;overflow:hidden}
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.role h2{font-size:clamp(30px,3.3vw,40px);margin:16px 0 26px}
+.role p{font-size:15px;margin-bottom:22px;max-width:500px}
+.role .label{font-size:12px;font-weight:700;color:var(--text-2);letter-spacing:.05em;margin-bottom:12px}
+.list-card{position:relative;background:#fff;border-radius:14px;padding:22px 16px 10px;box-shadow:0 10px 30px rgba(74,44,67,.06);z-index:1}
+.list-card .it{padding:14px 0 16px;border-bottom:1px solid #e9e1e8}
+.list-card .it:last-child{border:0}
+.list-card h4{display:flex;align-items:center;gap:8px;font-size:22px;color:#6e5068;margin-bottom:4px}
+.list-card h4 svg{font-size:14px;color:var(--heading)}
+.list-card p{font-size:13px;margin:0;max-width:none}
+.paths{padding:100px 0 80px;background:#fff}
+.path-ic{width:40px;height:40px;border-radius:50%;background:#f3e9f1;display:grid;place-items:center;color:var(--heading);font-size:18px;margin-bottom:22px}
+.paths .svc{padding:30px 34px 30px}
+.paths .svc h3{color:#6e5068}
+.paths .tags{margin-top:auto}
+.paths .cta-dark{margin-top:90px}
+
+/* ABOUT */
+.a-hero{padding:60px 0 70px;background:#fff}
+.a-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.a-hero h1{font-size:clamp(44px,5.4vw,62px);margin:14px 0 12px;font-weight:400}
+.a-hero .creds{border:0;padding:0;font-size:13px}
+.a-hero .reg{border-top:1px solid #e6dee5;margin:34px 0 28px;padding-top:30px;display:grid;grid-template-columns:150px 1fr;row-gap:8px;font-size:14px;color:var(--text-2)}
+.a-hero .reg dt{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--btn)}
+.a-photo{position:relative;display:flex;justify-content:flex-end}
+.a-photo img{position:relative;width:min(100%,420px);aspect-ratio:1/1;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(74,44,67,.12);z-index:1}
+.a-leaves{position:absolute;right:min(100%,370px);top:8%;width:260px;height:210px;color:#cdb8cf;transform:rotate(-100deg);opacity:.85;z-index:0}
+@media (max-width:960px){.a-leaves{display:none}.a-photo{justify-content:center}}
+.meet{background:var(--bg);padding:96px 0}
+.meet-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px}
+.meet h2{font-size:clamp(32px,3.6vw,42px);margin-top:20px}
+.meet h2 em{color:#a08aa0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.meet .p1{font-size:17px;color:var(--text-2);margin-bottom:24px}
+.meet .p2{font-size:14px}
+.contrib{background:#fff;padding:96px 0 100px}
+.c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.c-card{border:1px solid var(--line);border-radius:14px;padding:32px 28px 34px;background:#fff;transition:.25s}
+.c-card:hover{box-shadow:0 16px 36px rgba(74,44,67,.08)}
+.c-card h3{font-size:26px;margin-bottom:14px}
+.c-card p{font-size:13.5px}
+.built{background:var(--lav);padding:96px 0 90px}
+.b-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.b-card{background:#fff;border-radius:14px;padding:34px 28px 42px}
+.b-card h3{font-size:26px;margin-bottom:16px}
+.b-card p{font-size:13.5px}
+.built .quote-line{font-family:var(--serif);font-style:italic;font-size:22px;text-align:center;color:#8e7e8b;margin-top:50px}
+.philo{position:relative;background:var(--bg);padding:90px 0 210px;overflow:hidden}
+.philo .cta-dark{display:block;padding:56px 56px 64px;margin:0}
+.philo .cta-dark .eyebrow{color:#e9dde6;margin-bottom:12px;display:block}
+.philo .cta-dark h3{font-size:clamp(28px,3.4vw,40px)}
+.philo .cta-dark p{max-width:none;font-size:14px}
+.philo blockquote{font-family:var(--serif);font-size:clamp(26px,3.3vw,38px);color:#6e4a68;line-height:1.5;margin-top:80px;letter-spacing:-.01em}
+.philo cite{display:block;font-style:normal;border-top:1px solid #e5dde4;margin-top:20px;padding-top:18px;font-size:22px;color:#6e5068;position:relative;z-index:1}
+.philo .waves{position:absolute;left:0;bottom:0;width:100%;height:240px}
+
+/* view switching */
+.view{display:none}
+.view.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media (max-width:1100px){
+  .kayla-card{padding-left:230px}
+  .kayla-photo{left:-150px;width:370px}
+}
+@media (max-width:960px){
+  .nav-links{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:12px 28px 24px;box-shadow:0 18px 30px rgba(74,44,67,.12);display:none}
+  .nav-links.open{display:flex}
+  .nav-links>*{width:100%;padding:12px 0;border-bottom:1px solid var(--line)}
+  .dd-menu{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;padding:6px 0 0;min-width:0;display:none}
+  .dd.open .dd-menu{display:block;transform:none}
+  .burger{display:flex}
+  .nav-cta{display:none}
+  .what-grid,.s-hero-grid,.role-grid,.a-hero-grid,.meet-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .what h2{margin-bottom:24px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:30px}
+  .steps:before{display:none}
+  .b-grid{grid-template-columns:1fr 1fr}
+  .kayla{padding:70px 0 0}
+  .kayla-card{padding:44px 32px;margin:0 20px}
+  .kayla-photo{display:none}
+  .kayla-mobile{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 25%;border-radius:16px;margin-bottom:24px}
+  .kayla{padding-bottom:70px}
+  .sess-grid,.sess-grid.two{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .sess.vi,.sess.ho,.sess-grid.two .ho{margin-top:0}
+}
+@media (max-width:720px){
+  .svc-grid,.c-grid,.pillars{grid-template-columns:1fr}
+  .cta-dark,.cta-soft{flex-direction:column;align-items:flex-start;padding:32px 26px}
+  .journey-intro{grid-template-columns:1fr;gap:16px}
+  .journey-intro img{width:80px}
+  .steps,.b-grid{grid-template-columns:1fr}
+  .form .row{grid-template-columns:1fr;gap:16px;margin-bottom:16px}
+  .track figure{height:220px}.track figure.tall{height:250px}
+  .s-hero{padding:64px 0 80px}
+  .what{padding:70px 0 40px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#home" class="nav-logo" aria-label="Ascend home"><img src="img/logo-nav.png" alt="Ascend logo"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-scroll="about">About</a>
+      <a href="#meet-kayla" data-route="meet-kayla">Meet Kayla</a>
+      <div class="dd" id="dd">
+        <button type="button" data-route-group="services" aria-haspopup="true">My Services <svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd-menu" id="ddMenu"></div>
+      </div>
+      <a href="#home" data-scroll="how-we-work">How We Work</a>
+      <a href="#home" data-scroll="session-types">Session Types</a>
+    </nav>
+    <a href="#home" class="nav-cta" data-scroll="contact">Contact me</a>
+    <button class="burger" id="burger" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="app">
+
+<!-- ============ HOME ============ -->
+<section class="view" id="view-home">
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="img/logo.png" alt="">
+      <h1>ASCEND</h1>
+      <div class="rule"></div>
+      <div class="name">Kayla Van Eeden</div>
+      <div class="tagline">Occupational Therapy</div>
+    </div>
+  </div>
+
+  <div class="what" id="about">
+    <div class="wrap">
+      <div class="what-grid reveal">
+        <div>
+          <h2>What is Occupational Therapy?</h2>
+          <p>Occupational Therapy (OT) helps people of all ages participate in the daily activities (“occupations”) that are meaningful and necessary in their lives.</p>
+          <p class="small">OT supports independence, functional ability, and quality of life by addressing physical, cognitive, emotional, and environmental barriers.</p>
+        </div>
+        <div class="img-arch"><img src="img/ot-what.jpg" alt="Kayla in conversation with a young client on a garden bench"></div>
+      </div>
+      <div class="hr"></div>
+      <div class="journey-intro reveal">
+        <img src="img/logo-mark.png" alt="">
+        <div>
+          <h3>The <em>Ascend</em> journey.</h3>
+          <p>Ascend symbolises the upward journey toward reclaiming your capability, restoring your identity, and stepping confidently into a life of purpose.</p>
+          <strong>Our approach is built on three core pillars of care:</strong>
+        </div>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar"><div class="pillar-top"><span class="num">01</span><svg class="i" viewBox="0 0 24 24"><use href="#leaf"/></svg></div><h4>Collaborative</h4><p>Therapy is a partnership. We plan together, adjust as your life changes, and involve family, carers or your wider care team where it helps.</p></div>
+        <div class="pillar"><div class="pillar-top"><span class="num">02</span><svg class="i" viewBox="0 0 24 24"><use href="#leaf"/></svg></div><h4>Evidence-Based</h4><p>Our strategies draw on current occupational therapy research and clinical reasoning, then are adapted to your situation instead of applied as a template.</p></div>
+        <div class="pillar"><div class="pillar-top"><span class="num">03</span><svg class="i" viewBox="0 0 24 24"><use href="#leaf"/></svg></div><h4>Client-Centered</h4><p>Your goals, values and daily roles set the direction. We start with what matters to you and build every session around it.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery" aria-label="Photos from the practice"><div class="track" id="track"></div></div>
+
+  <div class="kayla">
+    <svg class="waves" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M560 400 C 760 300 900 250 1080 200 C 1220 160 1330 120 1440 100 L1440 400Z" fill="#7a5a7d" opacity=".55"/>
+      <path d="M700 400 C 900 260 1150 200 1440 230 L1440 400Z" fill="#8a6c8c" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <div class="kayla-card reveal">
+        <img class="kayla-photo" src="img/kayla-cutout.jpg" alt="Kayla Van Eeden"><img class="kayla-mobile" src="img/about-hero.jpg" alt="Kayla Van Eeden">
+        <h3>Kayla Van Eeden</h3>
+        <div class="sub">Founder &amp; Occupational Therapist</div>
+        <div class="creds"><span>B.Occ.Ther (UFS)</span><span>PFCE Trained</span><span>ErgoScience Certified</span></div>
+        <p>Kayla Van Eeden is the founder and Occupational Therapist at Ascend OT. Her practice is built on the core belief that every individual deserves to feel capable, confident, and fulfilled in their daily life.</p>
+        <a class="btn btn-primary" href="#meet-kayla">Read Kayla’s Full Bio <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal" style="max-width:720px">
+        <span class="eyebrow">My Services</span>
+        <h2>Guided support on your journey to balance</h2>
+        <p class="lead">Our occupational therapy services are designed around the meaningful occupations of your life. We help you address physical, cognitive, and emotional barriers to restore purpose and daily independence.</p>
+      </div>
+      <div class="svc-grid" id="homeServices"></div>
+      <div class="cta-dark reveal">
+        <div><h3>Not sure which pathway is right for you?</h3><p>Let’s discuss your current circumstances, goals, and needs. Together, we will craft a personalised treatment roadmap.</p></div>
+        <div class="cta-btns"><a class="btn btn-ghost" href="#home" data-scroll="contact">View Practice FAQs</a><a class="btn btn-white wa" href="#">Send us a WhatsApp</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="journey" id="how-we-work">
+    <div class="wrap">
+      <div class="section-head reveal" style="max-width:600px;margin-bottom:40px">
+        <span class="eyebrow">How we work</span>
+        <h2>Your Journey with Ascend</h2>
+        <p class="lead">We guide you step-by-step away from chronic disruption toward active functional restoration. Here is how we build your structured path forward.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><span class="step-n">01</span><span class="step-ic"><svg class="i" viewBox="0 0 24 24"><use href="#clip"/></svg></span><h4>Assessment</h4><p>A collaborative session dedicated to understanding your unique goals, baseline strengths, and functional daily challenges.</p></div>
+        <div class="step"><span class="step-n">02</span><span class="step-ic"><svg class="i" viewBox="0 0 24 24"><use href="#route"/></svg></span><h4>Plan/Feedback</h4><p>Development of a highly personalized, clinical and action-oriented roadmap containing clear functional milestones.</p></div>
+        <div class="step"><span class="step-n">03</span><span class="step-ic"><svg class="i" viewBox="0 0 24 24"><use href="#target"/></svg></span><h4>Treatment</h4><p>Practical hands-on sessions focusing on somatic strategies, cognitive tools, and meaningful real-life skill application.</p></div>
+        <div class="step"><span class="step-n">04</span><span class="step-ic"><svg class="i" viewBox="0 0 24 24"><use href="#cal"/></svg></span><h4>Review</h4><p>Consistent check-ins and evidence-based progress monitoring, adapting parameters to fit your developing routine.</p></div>
+      </div>
+      <div class="cta-soft reveal">
+        <div><h3>Ready to reclaim your daily rhythm?</h3><p>Let’s design a functional routine built around your life’s goals.</p></div>
+        <div class="cta-btns"><a class="btn btn-ghost" href="#home" data-scroll="contact">View Practice FAQs</a><a class="btn btn-white wa" href="#">Send us a WhatsApp</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sessions" id="session-types">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:#8a7d88">Session Types</span>
+        <h2 style="font-size:clamp(30px,3.6vw,42px)">Flexible support, wherever you need it</h2>
+        <p class="lead" style="font-size:14px">Choose the format that fits your lifestyle, every session is tailored to your needs and goals.</p>
+      </div>
+      <div class="sess-grid reveal" id="homeSessions"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE PAGE (rendered) ============ -->
+<section class="view" id="view-service"></section>
+
+<!-- ============ MEET KAYLA ============ -->
+<section class="view" id="view-meet-kayla">
+  <div class="a-hero">
+    <div class="wrap">
+      <div class="a-hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Founder &amp; Occupational Therapist</span>
+          <h1>Kayla Van Eeden</h1>
+          <div class="creds"><span>B.Occ Ther (UFS)</span><span>PFCE Trained</span><span>ErgoScience Certified</span></div>
+          <dl class="reg"><dt>HPCSA NUMBER</dt><dd>OT 0115002</dd><dt>PRACTICE NO</dt><dd>1149474</dd></dl>
+          <div class="cta-btns"><a class="btn btn-primary" href="#meet-kayla" data-scroll="contact">Schedule Consultation</a><a class="btn btn-outline" href="#home" data-scroll="services">View Services</a></div>
+        </div>
+        <figure class="a-photo reveal"><svg class="a-leaves" aria-hidden="true"><use href="#branch"/></svg><img src="img/about-hero.jpg" alt="Portrait of Kayla Van Eeden in her practice"></figure>
+      </div>
+    </div>
+  </div>
+  <div class="meet">
+    <div class="wrap meet-grid reveal">
+      <div><span class="eyebrow">Meet Kayla</span><h2>Sustained confidence starts with <em>small, functional adjustments.</em></h2></div>
+      <div>
+        <p class="p1">Kayla Van Eeden is the founder and Occupational Therapist at Ascend OT. Her practice is built on the core belief that every individual deserves to feel capable, confident, and fulfilled in their daily life.</p>
+        <p class="p2">She holds a Bachelor’s degree in Occupational Therapy from the University of the Free State, along with specialized post-graduate training, including an OTGrow Counselling course, Karen Theunissen’s Psychiatric Functional Capacity Evaluator Course, and certification as an ErgoScience practitioner.</p>
+      </div>
+    </div>
+  </div>
+  <div class="contrib">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom:40px"><span class="eyebrow">Beyond the practice</span><h2 style="font-size:clamp(30px,3.6vw,42px)">Contributing to the Profession</h2></div>
+      <div class="c-grid reveal">
+        <div class="c-card"><h3>OTASA Committee</h3><p>Committee Member for Southern Gauteng OTASA, supporting the professional community and advancing OT standards.</p></div>
+        <div class="c-card"><h3>Clinical Supervision</h3><p>Clinical Supervisor at the University of Pretoria, guiding and evaluating final-year OT students on their clinical rotations.</p></div>
+        <div class="c-card"><h3>Student Leadership</h3><p>Served as OTASA Student Representative while studying at the University of the Free State.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="built">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom:40px"><span class="eyebrow">How Kayla works</span><h2 style="font-size:clamp(30px,3.6vw,42px)">Therapy Built Around You</h2></div>
+      <div class="b-grid reveal">
+        <div class="b-card"><h3>Heard First</h3><p>Your goals, values and lived experience set the direction of every session.</p></div>
+        <div class="b-card"><h3>True Partnership</h3><p>No one-size-fits-all plans. Together we break daily barriers into manageable steps that fit your life.</p></div>
+        <div class="b-card"><h3>The Whole Person</h3><p>We look beyond diagnosis to rebuild routines, restore function and reconnect with what gives life meaning.</p></div>
+        <div class="b-card"><h3>Care That Fits</h3><p>In the clinic, online or at home, whichever feels most comfortable for you.</p></div>
+      </div>
+      <p class="quote-line reveal">A warm, safe space where you are met with empathy and dignity.</p>
+    </div>
+  </div>
+  <div class="philo">
+    <div class="wrap">
+      <div class="cta-dark reveal">
+        <span class="eyebrow">The Ascend Philosophy</span>
+        <h3>Rising from challenge to sustained confidence.</h3>
+        <p>Whether navigating emotional dysregulation, recovering from burnout, rebuilding life after addiction, or adapting to changes in aging and physical health, Ascend OT provides a structured, compassionate path forward.</p>
+      </div>
+      <blockquote class="reveal">"Ascend was established to guide adults, adolescents, and older adults through life's most challenging transitions — one step at a time."<cite>— Kayla Van Eeden</cite></blockquote>
+    </div>
+    <svg class="waves" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 100 C 250 230 520 250 820 120 C 1040 30 1240 30 1440 80 L1440 140 C 1240 70 1040 90 820 170 C 560 260 260 250 0 150Z" fill="#bca3c2"/>
+      <path d="M900 240 C 1050 130 1250 90 1440 150 L1440 240Z" fill="#cdd7dd"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ CONTACT (all pages) ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Let’s talk about how I can help <em>you</em></h2>
+    <p class="sub">Reach out directly, or send a message and I’ll get back to you.</p>
+    <div class="contact-grid">
+      <form class="form reveal" id="form" novalidate>
+        <div class="row"><input name="name" placeholder="Name" aria-label="Name" required><input name="email" type="email" placeholder="Email" aria-label="Email" required></div>
+        <textarea name="msg" placeholder="How can I help?" aria-label="How can I help?" required></textarea>
+        <button class="send" type="submit">Send Message</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+      <div class="reveal">
+        <img class="growth" src="img/growth.jpg" alt="Seed to flower growth icons">
+        <ul class="info">
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#phone"/></svg><a href="tel:+27825191509">082 519 1509</a></li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#mail"/></svg><a href="mailto:kaylave.ascendot@gmail.com">kaylave.ascendot@gmail.com</a></li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#pin"/></svg><span>1 Ateljee St, Randpark Ridge,<br>Randburg, 2169</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 110 C 260 230 520 210 840 80 C 1080 -10 1280 30 1440 110 L1440 200 L0 200Z" fill="#3a2234"/>
+    <path d="M0 140 C 300 240 560 200 880 100 C 1100 30 1300 60 1440 130 L1440 200 L0 200Z" fill="#472b41"/>
+  </svg>
+  <p class="foot-meta">© Ascend Occupational Therapy · Kayla Van Eeden · HPCSA OT 0115002 · Practice No 1149474</p>
+</section>
+</main>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="sprout" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6Z" fill="currentColor"/><path d="M12 10c0-4 3-6 7-6 0 4-3 6-7 6Z" fill="currentColor"/></symbol>
+  <symbol id="clip" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6"/></symbol>
+  <symbol id="route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+  <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" fill="currentColor"/><circle cx="9" cy="7" r="4" fill="currentColor"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="laptop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></symbol>
+  <symbol id="house" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3Z" fill="currentColor"/><path d="M12 16.5s-2.5-1.4-2.5-3a1.3 1.3 0 0 1 2.5-.6 1.3 1.3 0 0 1 2.5.6c0 1.6-2.5 3-2.5 3Z" stroke="#fff" fill="#fff" stroke-width="1"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="currentColor" stroke="none"/><path d="m3 6 9 7 9-7" stroke="#6a5068"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s8-6 8-12a8 8 0 0 0-16 0c0 6 8 12 8 12Z" fill="currentColor" stroke="none"/><circle cx="12" cy="10" r="3" fill="#6a5068" stroke="none"/></symbol>
+  <symbol id="branch" viewBox="0 0 320 220">
+    <g fill="currentColor"><path d="M10 210 C 90 150 170 110 310 40" fill="none" stroke="currentColor" stroke-width="5"/>
+    <ellipse cx="270" cy="38" rx="34" ry="13" transform="rotate(-22 270 38)"/><ellipse cx="230" cy="20" rx="12" ry="30" transform="rotate(20 230 20)"/>
+    <ellipse cx="215" cy="70" rx="12" ry="28" transform="rotate(-12 215 70)"/><ellipse cx="185" cy="60" rx="11" ry="27" transform="rotate(10 185 60)"/>
+    <ellipse cx="160" cy="105" rx="12" ry="28" transform="rotate(-14 160 105)"/><ellipse cx="128" cy="95" rx="11" ry="27" transform="rotate(14 128 95)"/>
+    <ellipse cx="102" cy="140" rx="11" ry="26" transform="rotate(-16 102 140)"/><ellipse cx="72" cy="132" rx="10" ry="24" transform="rotate(18 72 132)"/>
+    <ellipse cx="48" cy="176" rx="10" ry="22" transform="rotate(-20 48 176)"/><ellipse cx="292" cy="68" rx="26" ry="10" transform="rotate(18 292 68)"/>
+    <circle cx="40" cy="150" r="5"/><circle cx="28" cy="162" r="4"/><circle cx="58" cy="198" r="4"/></g>
+  </symbol>
+</svg>
+
+<script>
+const ICON = (id,cls='i') => `<svg class="${cls}" viewBox="0 0 24 24"><use href="#${id}"/></svg>`;
+const ARROW = `<svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+const WA = "https://wa.me/27825191509?text=" + encodeURIComponent("Hi Kayla, I'd like to find out more about occupational therapy at Ascend.");
+
+const SERVICES = [
+ {id:"mental-health", icon:"icon-mh", name:"Mental Health & Emotional Wellbeing", short:"Mental Health & Emotional Wellbeing",
+  card:"Support for adults and adolescents navigating stress, burnout, trauma, mood disorders and life transitions.",
+  cardTags:["Stress Management","Emotional Regulation","Burnout","Anxiety","Depression"],
+  hero:"hero-mh", heroR:"r-tl", heroAlt:"Kayla and a young client talking in a garden",
+  desc:"Support for adults and adolescents navigating stress, burnout, trauma, mood disorders and life transitions.",
+  roleH:"Bridging clinical recovery with daily reality.",
+  roleP:["Mental health challenges do not just affect how you feel — they directly impact your ability to carry out everyday routines, hold down work, and engage with loved ones.","Occupational Therapy (OT) in mental health focuses on practical execution: designing routines, structural limit-setting, and sensory modifications that empower you to show up for your life with sustained confidence and purpose."],
+  label:"We Commonly Work With Individuals Experiencing:",
+  items:[["Mood Disorders","Major depressive disorder, persistent low mood, lack of motivation, and Bipolar Disorder."],["Anxiety & Trauma","Generalized anxiety, panic states, PTSD, trauma-related conditions, and clinical social anxiety."],["Other Mental Health Conditions","Schizophrenia and psychotic spectrum conditions, Conversion Disorder, Eating Disorders and Personality Disorders."],["Burnout & Stress","Chronic workplace exhaustion, executive lifestyle strain, caregiver fatigue, and executive dysfunction."],["Life Transitions","Adjusting to major shifts such as career pivots, relational loss, retirement, or entering independent adulthood."]],
+  pathH:"Practical pathways to<br>restructured living", pathSub:"Instead of only talking about your challenges, OT provides active strategies and environmental adjustments to help you function with confidence.",
+  paths:[["Coping Skills & Grounding","Real-time, physiological and cognitive tools designed to manage panic, sensory overload, cognitive fatigue, and acute emotional dysregulation.",["Somatic Grounding","Breathing Protocols","Stress De-escalation"]],["Routine Restructuring","Collaborative building of structured, balanced daily schedules covering sleep hygiene, functional work-rest cycles, dietary routines, and consistent self-care.",["Circadian Alignment","Habit Stacking","Energy Conservation"]],["Burnout Recovery & Rest","Establishing clear, unyielding physical and structural boundaries between professional and home life, directly managing digital inputs, and restructuring executive limits.",["Rest Architecture","Inbox Hygiene","Time-Blocking"]],["Sensory Regulation","Analyzing and adjusting your physical environments—including household layout, lighting, acoustic profiles, and tactile materials—to reduce chronic nervous system activation.",["Workspace Audit","Sensory Diets","Acoustic Shielding"]]],
+  ctaH:"Begin your path toward functional clarity.", ctaP:"Schedule a clinical discovery intake call. Let’s discuss your current routines, constraints, and outline an occupational path forward.",
+  sessSub:"Choose the format that fits your lifestyle, every session is tailored to your needs and goals.",
+  sess:[["in","In-Person","Hands-on assessment of functional skills in a calm, structured clinical space.","sess-inperson"],["vi","Virtual","Convenient, secure online support ideal for follow-ups, cognitive strategies, and routine planning.","sess-virtual"],["ho","Home Visits","Real-world therapy directly in your living environment to optimize your home setup.","sess-home"]]},
+
+ {id:"addiction-recovery", icon:"icon-add", name:"Addiction Recovery & Rehabilitation", short:"Addiction Recovery & Rehabilitation",
+  card:"Rebuilding structured daily routines, healthy habits, and long-term purpose beyond recovery.",
+  cardTags:["Routines","Purpose","Reintegration","Cognitive Function"],
+  hero:"hero-add", heroR:"r-tr", heroAlt:"Kayla in a session with two adult clients",
+  desc:"Rebuilding structured daily routines, healthy habits and long-term purpose beyond recovery.",
+  roleH:"Building a life where recovery can hold.",
+  roleP:["Sustaining recovery takes more than stopping a behaviour. It means building a daily life where substance use and destructive habits no longer fit.","Occupational Therapy (OT) addresses the cognitive, environmental and behavioural side of recovery, so you can return to work, relationships and routine with structure and confidence."],
+  label:"We Commonly Assist With:",
+  items:[["Substance-Use Disorders","Alcohol, cannabis, stimulants, prescription medication and opioids."],["Behavioural Addictions","Compulsive gaming, gambling, pornography, sex, love or spending."],["Cognitive Fog","Difficulty concentrating, remembering and planning in early and ongoing recovery."],["Broken Routines & Work Loss","Lost structure, impaired daily routine or loss of employment."],["Social Isolation","Withdrawal from family, friends and community, or difficulty reconnecting."]],
+  pathH:"Practical pathways to<br>sustained recovery", pathSub:"Recovery lasts when daily life supports it. OT gives you practical strategies and environmental changes to make that happen.",
+  paths:[["Habit Formation & Routine Design","Replacing trigger-heavy idle time with meaningful, healthy daily rituals.",["Daily Rituals","Habit Stacking","Structured Routines"]],["Trigger Identification & Relapse Prevention","Mapping the environmental and emotional triggers behind cravings and building a personalised safety plan.",["Trigger Mapping","Safety Planning","Coping Strategies"]],["Essential Life-Skills Training","Re-learning budgeting, time management, meal planning and goal setting.",["Budgeting","Meal Planning","Goal Setting"]],["Community & Work Reintegration","Guided support as you return to school, full-time work or your social circles.",["Return to Work","Social Reconnection","Gradual Re-entry"]]],
+  ctaH:"Take the next step in your recovery.", ctaP:"Book a discovery call. We’ll talk through where you are now and outline a practical path forward.",
+  sessSub:"Choose the format that fits your stage of recovery and your lifestyle.",
+  sess:[["in","In-Person","Focused skill training and structured accountability at our practice.","sess-add"],["vi","Virtual","Regular check-ins and strategy adjustments as you transition back into daily roles.","sess-virtual"],["ho","Home Visits","A practical evaluation of your living environment to remove triggers and set up healthy habits.","sess-home"]]},
+
+ {id:"healthy-ageing", icon:"icon-age", name:"Healthy Ageing & Geriatric Care", short:"Healthy Ageing & Geriatric Care",
+  card:"Supporting independence, cognitive health, and quality of life through personalised occupational therapy for older adults and their caregivers.",
+  cardTags:["Home Safety","Cognition","Health","Independence","Caregiving"],
+  hero:"hero-age", heroR:"r-bl", heroAlt:"A younger person holding an older person's hands",
+  desc:"Support for older adults and their families to stay safe, capable and independent at home.",
+  roleH:"Adapting daily life so independence can continue.",
+  roleP:["Ageing brings changes in strength, memory and mobility, but it should not mean losing your dignity or independence.","OT adapts the environment and retrains skills so older adults can keep taking part in the daily activities they love, while their families are guided and supported along the way."],
+  label:"We Commonly Assist With:",
+  items:[["Cognitive Changes","Dementia, Alzheimer's disease, vascular dementia and general memory decline."],["Neurological & Physical Health","Stroke recovery, Parkinson's disease, frailty, chronic pain and joint stiffness."],["Safety & Fall Risks","Unsteady mobility, fear of falling or a recent accident at home."],["Emotional Wellbeing","Low mood or social withdrawal linked to ageing or reduced mobility."],["Caregiver Strain","Family members carrying the day-to-day demands of care."]],
+  pathH:"Practical pathways to safer,<br>independent living", pathSub:"OT focuses on adapting your environment and retraining everyday skills, not only managing symptoms.",
+  paths:[["Home Safety Assessments","Evaluating lighting, trip hazards, bathroom layout and accessibility to prevent falls.",["Fall Prevention","Home Modifications","Accessibility"]],["ADL Retraining & Energy Conservation","Adaptive techniques, assistive devices and pacing strategies that keep self-care and daily activities manageable and less tiring.",["Assistive Devices","Pacing","Self-Care"]],["Cognitive Rehabilitation & Memory Aids","Visual cues, structured memory books and routine reminders that support memory and confidence.",["Visual Cues","Memory Books","Routine Reminders"]],["Caregiver Support & Education","Guiding family members through safe transfer techniques, communication strategies, home adjustments and their own stress management.",["Safe Transfers","Communication","Carer Wellbeing"]]],
+  ctaH:"Begin the conversation about safer independence.", ctaP:"Book a discovery call. We’ll talk through your situation and outline a practical plan for the home and the family.",
+  sessSub:"Choose the format that works best for you and your family.",
+  sess:[["ho","Home Visits (Primary)","On-site evaluations and practical setup directly in your home environment.","sess-home"],["vi","Virtual","Family consultations and follow-up guidance for caregivers.","sess-virtual"]]},
+
+ {id:"teen-support", icon:"icon-teen", name:"Teen, Young Adult & Parent Support", short:"Teen, Young Adult & Parent Support",
+  card:"Empowering teens and empowering parents to navigate daily challenges, sensory processing disorders, academic stress, and life transitions.",
+  cardTags:["Confidence","Coping Skills","Parenting Tools","Emotional Support"],
+  hero:"hero-teen", heroR:"r-all", heroAlt:"Kayla working through a worksheet with a teenager",
+  desc:"Empowering teens and parents to navigate daily challenges, sensory processing difficulties, academic stress and life transitions.",
+  roleH:"Tools for teens. Coaching for parents.",
+  roleP:["Adolescence and young adulthood bring major developmental transitions. Add sensory processing differences, emotional stress or school pressure, and both teens and parents can feel overwhelmed.","OT gives teens practical self-regulation tools and gives parents actionable coaching, so the whole household is working from the same plan."],
+  label:"We Commonly Assist With:",
+  items:[["Sensory Processing Difficulties or Disorders","Sensitivity to noise, touch, light or crowds, often alongside ADHD or Autism Spectrum Disorder (ASD)."],["Academic Stress & Executive Dysfunction","Difficulty with planning, homework completion, time management, and study habits."],["Emotional Regulation & Mood","Anxiety, low mood, depression, trauma and emotional outbursts."],["Family Conflict & Overwhelm","Parents who need practical tools for calmer, more structured home routines."],["Social & Life Transitions","Navigating peer relationships, starting high school, or transitioning into tertiary education and independence."]],
+  pathH:"Practical pathways to<br>confident, independent living", pathSub:"Instead of only talking about challenges, OT gives teens and parents active strategies they can use at home, at school and beyond.",
+  paths:[["Teen Life-Skills & Executive Functioning","Teaching time-blocking, study strategies, chore management and goal setting.",["Time-Blocking","Study Strategies","Goal Setting"]],["Sensory & Emotional Regulation","Helping teens identify sensory triggers and build self-soothing grounding routines.",["Sensory Triggers","Grounding Routines","Self-Soothing"]],["Parenting Coaching & Behavioural Support","Practical tools for parents to create structured home environments and reduce family conflict.",["Home Routines","Parent Tools","Behaviour Support"]],["Transition Planning","Step-by-step guidance for moving into independent living or university life.",["Independent Living","University Readiness","Life Skills"]]],
+  ctaH:"Begin with one small practice step.", ctaP:"Book a discovery call for you or your teen. We’ll talk through what is happening at home and school and outline a practical plan.",
+  sessSub:"Choose the format that fits your family’s schedule and comfort.",
+  sess:[["in","In-Person","Hands-on assessment and interactive sessions at our practice.","sess-teen"],["vi","Virtual","Flexible parent coaching sessions and teen follow-ups.","sess-virtual"],["ho","Home Visits","On-site evaluations and practical setup directly in your home environment.","sess-home"]]}
+];
+const SESS_ICON = {in:"users", vi:"laptop", ho:"house"};
+const amp = s => s.replace(/&/g,"&amp;");
+
+function sessionCards(list){
+  return list.map(([k,t,d,img])=>`<div class="sess ${k}"><span class="sess-ic">${ICON(SESS_ICON[k])}</span><h3>${amp(t)}</h3><p>${d}</p><hr><div class="ph"><img src="img/${img}.jpg" alt="${amp(t)} session"></div></div>`).join("");
+}
+const BRANCHES = `<svg class="leaf-deco" style="right:4%;top:150px;width:330px;height:230px"><use href="#branch"/></svg><svg class="leaf-deco" style="left:2%;bottom:40px;width:300px;height:200px;transform:scaleX(-1) rotate(-10deg)"><use href="#branch"/></svg>`;
+
+// Home: services + sessions + gallery + dropdown
+document.getElementById("homeServices").innerHTML = SERVICES.map(s=>`
+  <a class="svc reveal" href="#${s.id}"><img class="svc-icon" src="img/${s.icon}.jpg" alt=""><h3>${amp(s.name)}</h3><p>${s.card}</p>
+  <div class="tags">${s.cardTags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+  <span class="svc-link">Learn more about this practice ${ARROW}</span></a>`).join("");
+document.getElementById("homeSessions").innerHTML = sessionCards([
+  ["in","In-Person","Face-to-face therapy at our practice. Ideal for hands-on assessments and functional support.","sess-inperson"],
+  ["vi","Virtual","Secure sessions from home or work. Perfect for follow-ups, mental health support, and guided strategies.","sess-virtual"],
+  ["ho","Home Visits","Therapy in your everyday environment. Focused on safety routines and practical independence at home.","sess-home"]]);
+document.querySelector("#view-home .sessions").insertAdjacentHTML("afterbegin", BRANCHES);
+document.getElementById("ddMenu").innerHTML = SERVICES.map(s=>`<a href="#${s.id}"><img src="img/${s.icon}.jpg" alt="">${amp(s.short)}</a>`).join("");
+const G = [["gallery-desk",""],["gallery-hall","tall"],["gallery-ball",""],["hero-age","arch"],["ot-what",""],["sess-add","tall"],["gallery-group",""],["sess-virtual","arch"],["hero-mh",""],["sess-home","tall"],["sess-teen",""]];
+const gHtml = G.map(([g,c])=>`<figure class="${c}"><img src="img/${g}.jpg" alt=""></figure>`).join("");
+document.getElementById("track").innerHTML = gHtml + gHtml;
+document.querySelectorAll(".wa").forEach(a=>{a.href=WA;a.target="_blank";a.rel="noopener"});
+
+// Service page renderer
+function renderService(s){
+  const v = document.getElementById("view-service");
+  v.innerHTML = `
+  <div class="s-hero"><div class="wrap s-hero-grid">
+    <div class="reveal"><span class="eyebrow">My Services</span><h1>${amp(s.name)}</h1><p>${s.desc}</p>
+      <div class="btns"><a class="btn btn-primary" href="#${s.id}" data-scroll="contact">Schedule Intake Session</a><a class="btn btn-outline" href="#${s.id}" data-scroll="interventions">Explore Interventions</a></div></div>
+    <div class="ph ${s.heroR} reveal"><img src="img/${s.hero}.jpg" alt="${s.heroAlt}"></div>
+  </div></div>
+  <div class="role">
+    <svg class="leaf-deco" style="left:44%;top:70px;width:200px;height:260px;color:#dfd2df;transform:rotate(-60deg)"><use href="#branch"/></svg>
+    <div class="wrap role-grid">
+      <div class="reveal"><span class="eyebrow">The role of occupational therapy</span><h2>${s.roleH}</h2>${s.roleP.map(p=>`<p>${p}</p>`).join("")}</div>
+      <div class="reveal"><div class="label">${s.label}</div><div class="list-card">${s.items.map(([t,d])=>`<div class="it"><h4>${ICON("leaf")}${amp(t)}</h4><p>${d}</p></div>`).join("")}</div></div>
+    </div>
+  </div>
+  <div class="paths" id="interventions"><div class="wrap">
+    <div class="section-head reveal" style="max-width:700px"><span class="eyebrow">How therapy helps</span><h2>${s.pathH}</h2><p class="lead" style="font-size:14px">${s.pathSub}</p></div>
+    <div class="svc-grid">${s.paths.map(([t,d,tags])=>`<div class="svc reveal"><span class="path-ic">${ICON("sprout")}</span><h3>${amp(t)}</h3><p>${d}</p><div class="tags">${tags.map(x=>`<span class="tag">${x}</span>`).join("")}</div></div>`).join("")}</div>
+    <div class="cta-dark reveal"><div><h3>${s.ctaH}</h3><p>${s.ctaP}</p></div><div class="cta-btns"><a class="btn btn-ghost" href="#${s.id}" data-scroll="contact">View Practice FAQs</a><a class="btn btn-white wa" href="${WA}" target="_blank" rel="noopener">Send us a WhatsApp</a></div></div>
+  </div></div>
+  <div class="sessions">${BRANCHES}<div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow" style="color:#8a7d88">Session Types</span><h2 style="font-size:clamp(30px,3.6vw,42px)">What to expect in your sessions</h2><p class="lead" style="font-size:14px">${s.sessSub}</p></div>
+    <div class="sess-grid ${s.sess.length===2?"two":""} reveal">${sessionCards(s.sess)}</div>
+  </div></div>`;
+}
+
+// Router (plain #name hashes)
+const views = ["home","service","meet-kayla"];
+let pendingScroll = null;
+function route(){
+  const h = (location.hash||"#home").slice(1);
+  const svc = SERVICES.find(s=>s.id===h);
+  let view = svc ? "service" : (h==="meet-kayla" ? "meet-kayla" : "home");
+  if(svc) renderService(svc);
+  views.forEach(v=>document.getElementById("view-"+v).classList.toggle("on", v===view));
+  document.querySelectorAll(".nav-links [data-route]").forEach(a=>a.classList.toggle("active", a.dataset.route===h));
+  document.querySelector("[data-route-group]").classList.toggle("active", !!svc);
+  document.title = (svc ? svc.name + " · " : h==="meet-kayla" ? "Meet Kayla · " : "") + "Ascend Occupational Therapy";
+  closeMenu();
+  observe();
+  if(pendingScroll){ const id=pendingScroll; pendingScroll=null; requestAnimationFrame(()=>scrollToId(id)); }
+  else window.scrollTo({top:0,behavior:"instant"});
+}
+function scrollToId(id){
+  const el=document.getElementById(id); if(!el) return;
+  const y = el.getBoundingClientRect().top + scrollY - 78;
+  window.scrollTo({top:y,behavior:"smooth"});
+}
+document.addEventListener("click",e=>{
+  const a = e.target.closest("[data-scroll]");
+  if(!a) return;
+  e.preventDefault();
+  const target = a.dataset.scroll;
+  const want = a.getAttribute("href");
+  const cur = location.hash || "#home";
+  // section exists on the current view (contact is global)
+  const onCurrent = document.querySelector(".view.on #"+target) || target==="contact";
+  if(target==="contact" || (want===cur && onCurrent)){ closeMenu(); scrollToId(target); }
+  else { pendingScroll = target; location.hash = want; if(want===cur) route(); }
+});
+window.addEventListener("hashchange", route);
+
+// Mobile menu
+const links = document.getElementById("navLinks"), dd = document.getElementById("dd");
+function closeMenu(){ links.classList.remove("open"); dd.classList.remove("open"); }
+document.getElementById("burger").onclick = ()=>links.classList.toggle("open");
+dd.querySelector("button").onclick = ()=>dd.classList.toggle("open");
+document.addEventListener("click",e=>{ if(!dd.contains(e.target)) dd.classList.remove("open"); });
+
+// Reveal on scroll
+let io;
+function observe(){
+  if(io) io.disconnect();
+  io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }),{threshold:.12});
+  document.querySelectorAll(".view.on .reveal:not(.in), .contact .reveal:not(.in)").forEach(el=>io.observe(el));
+}
+
+// Contact form: no server, so hand the message to WhatsApp or email
+document.getElementById("form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f = e.target, note = document.getElementById("formNote");
+  const name=f.name.value.trim(), email=f.email.value.trim(), msg=f.msg.value.trim();
+  if(!name || !email || !msg){ note.textContent="Please add your name, email and a short message."; note.classList.add("show"); return; }
+  const text = `Hi Kayla, my name is ${name} (${email}).\n\n${msg}`;
+  const wa = "https://wa.me/27825191509?text="+encodeURIComponent(text);
+  const mail = "mailto:kaylave.ascendot@gmail.com?subject="+encodeURIComponent("Enquiry from "+name)+"&body="+encodeURIComponent(text);
+  note.innerHTML = `Your message is ready. Send it via <a href="${wa}" target="_blank" rel="noopener">WhatsApp</a> or <a href="${mail}">email</a> (kaylave.ascendot@gmail.com).`;
+  note.classList.add("show");
+});
+
+route();
+</script>
+</body>
+</html>
